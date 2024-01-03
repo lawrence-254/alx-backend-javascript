@@ -5,8 +5,8 @@ export default function getResponseFromAPI() {
       if (response) {
         resolve('success');
       } else {
-      
-        reject('failure');
+        const err = new Error('failure');
+        reject(err);
       }
     }, 5000);
   });
