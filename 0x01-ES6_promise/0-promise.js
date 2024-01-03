@@ -1,12 +1,11 @@
-export default function getResponseFromAPI()
-{
+export default function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const response = true;
-      if (response)
-      {
+      if (response) {
         resolve('success');
-      }else{
+      } else {
+      
         reject('failure');
       }
     }, 5000);
