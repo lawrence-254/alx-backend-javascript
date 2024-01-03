@@ -4,6 +4,11 @@ export default function getResponseFromAPI()
     setTimeout(() => {
       const response = true;
       if (response)
+      {
         resolve('success');
-      reject('failure');
+      }else{
+        reject('failure');
+      }
+    }, 5000);
+  });
 }
