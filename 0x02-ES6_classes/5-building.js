@@ -18,3 +18,9 @@ export default class Building {
     throw new Error('evacuationWarningMessage method must be overridden by subclasses');
   }
 }
+
+class OfficeBuilding extends Building {
+  evacuationWarningMessage() {
+    return 'Evacuate calmly via the emergency exits.';
+  }
+}
