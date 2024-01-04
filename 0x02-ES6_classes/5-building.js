@@ -14,7 +14,7 @@ export default class Building {
     return this._sqft;
   }
 
-  this.evacuationWarningMessage() {
+  evacuationWarningMessage() {
     throw new Error('evacuationWarningMessage method must be overridden by subclasses');
   }
 }
