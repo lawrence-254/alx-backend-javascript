@@ -1,26 +1,21 @@
 export default class Building {
   constructor(sqft) {
+    if (this.constructor === Building) {
+      throw new Error('Abstract classes cannot be instantiated.');
+    }
+
     if (typeof sqft !== 'number') {
       throw new TypeError('sqft must be a number');
     }
+
     this._sqft = sqft;
 
-    if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+    if (typeof this.evacuationWarningMessage !== 'function') {
       throw new Error('Class extending Building must override evacuationWarningMessage');
     }
   }
 
   get sqft() {
     return this._sqft;
-  }
-
-  evacuationWarningMessage() {
-    throw new Error('evacuationWarningMessage method must be overridden by subclasses');
-  }
-}
-
-class OfficeBuilding extends Building {
-  evacuationWarningMessage() {
-    return 'Evacuate calmly via the emergency exits.';
   }
 }
