@@ -1,15 +1,16 @@
 export default function cleanSet(set, startString) {
-  if (!(set instanceof Set) || typeof startString !== 'string') {
-    throw new Error('Invalid input types.');
-  }
-
-  if (startString === '') {
+  const newStr = [];
+  if (!set || !startString || !(set instanceof Set) || typeof startString !== 'string') {
     return '';
   }
+  for (const value of set.values()) {
+    if (typeof value === 'string' && value.startsWith(startString)) {
+      const valueSubStr = value.substring(startString.length);
 
-  const filteredValues = Array.from(set)
-    .filter((value) => typeof value === 'string' && value.startsWith(startString))
-    .map((value) => value.substring(startString.length));
-
-  return filteredValues.join('-');
+      if (valueSubStr && valueSubStr !== value) {
+        newStr.push(valueSubStr);
+      }
+    }
+  }
+  return newStr.join('-');
 }
