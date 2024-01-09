@@ -3,6 +3,10 @@ export default function cleanSet(set, startString) {
     throw new Error('Invalid input types.');
   }
 
+  if (startString === '') {
+    return '';
+  }
+
   const filteredValues = Array.from(set)
     .filter(value => typeof value === 'string' && value.startsWith(startString))
     .map(value => value.substring(startString.length));
