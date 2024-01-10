@@ -26,8 +26,8 @@ export const displayStudents = (students: Array<Student>): void => {
   const tableHead = document.createElement('thead');
   const headRow = document.createElement('tr');
   const tableBody = document.createElement('tbody');
-  headRow.insertAdjacentHTML('beforeend', '<td>FirstName</td');
-  headRow.insertAdjacentHTML('beforeend', '<td>Location</td');
+  headRow.insertAdjacentHTML('beforeend', '<td>FirstName</td>');
+  headRow.insertAdjacentHTML('beforeend', '<td>Location</td>');
   tableHead.insertAdjacentElement('beforeend', headRow);
 
   for (const student of students) {
