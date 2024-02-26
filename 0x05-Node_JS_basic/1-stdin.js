@@ -3,7 +3,7 @@ process.stdout.write('Welcome to Holberton School, what is your name?\n');
 const nameInput = '';
 
 process.stdin.on('readable', () => {
-  const chunk;
+  let chunk;
 
   while ((chunk = process.stdin.read()) !== null) {
     nameInput += chunk;
