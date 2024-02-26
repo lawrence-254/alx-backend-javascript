@@ -1,13 +1,20 @@
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-process.stdin.on('readable', () => {
-  const nameInput = process.stdin.read()
+const nameInput = '';
 
-  if (nameInput) {
-    process.stdout.write(`Your name is: ${nameInput}`);
+process.stdin.on('readable', () => {
+  const chunk;
+
+  while ((chunk = process.stdin.read()) !== null) {
+    nameInput += chunk;
+    if (chunk.includes('\n')) {
+      process.stdout.write(`Your name is: ${nameInput}`);
+      nameInput = '';
+    }
   }
 });
 
 process.stdin.on('end', () => {
   process.stdout.write('This important software is now closing\n');
 });
+
