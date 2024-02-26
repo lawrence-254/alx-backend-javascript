@@ -6,4 +6,4 @@ function displayMessage(m)
   console.log(m);
 };
 
-module.exports displayMessage
+module.exports displayMessage;
